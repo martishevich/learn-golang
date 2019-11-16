@@ -2,11 +2,15 @@ package main
 
 import "fmt"
 
-func main() {
-	factorialArgument := 5
-	result := 1
-	for i := 1; i <= factorialArgument; i++ {
+func factorial(number uint) uint {
+	result := uint(1)
+	for i := uint(1); i <= number; i++ {
 		result *= i
 	}
+	return result
+}
+
+func main() {
+	result := factorial(5)
 	fmt.Println(result)
 }
