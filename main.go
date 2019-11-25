@@ -3,11 +3,15 @@ package main
 import "fmt"
 
 func average(numbers []int) float64 {
+	numbersLen := len(numbers)
+	if numbersLen == 0 {
+		return 0
+	}
 	sum := 0
 	for _, n := range numbers {
 		sum += n
 	}
-	return float64(sum) / float64(len(numbers))
+	return float64(sum) / float64(numbersLen)
 }
 
 func main() {
