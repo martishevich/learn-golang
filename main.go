@@ -6,6 +6,9 @@ import (
 )
 
 func max(words []string) string {
+	if len(words) == 0 {
+		return ""
+	}
 	maxLength := utf8.RuneCountInString(words[0])
 	maxWordId := 0
 	for i, n := range words {
@@ -35,4 +38,7 @@ func main() {
 
 	maxWordTwo := max([]string{"one", "two"})
 	fmt.Println(maxWordTwo)
+
+	maxWordT := max([]string{})
+	fmt.Println(maxWordT)
 }
