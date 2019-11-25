@@ -1,13 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode/utf8"
+)
 
 func max(words []string) string {
-	maxLength := len(words[0])
+	maxLength := utf8.RuneCountInString(words[0])
 	maxWordId := 0
 	for i, n := range words {
-		if maxLength < len(n) {
-			maxLength = len(n)
+		wordLength := utf8.RuneCountInString(n)
+		if maxLength < wordLength {
+			maxLength = wordLength
 			maxWordId = i
 		}
 	}
