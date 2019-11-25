@@ -22,9 +22,10 @@ func max(words []string) string {
 }
 
 func reverse(numbers []int64) []int64 {
-	var reversedNumbers []int64
-	for _, n := range numbers {
-		reversedNumbers = append([]int64{n}, reversedNumbers...)
+	numberLength := len(numbers)
+	reversedNumbers := make([]int64, numberLength)
+	for i := range numbers {
+		reversedNumbers[numberLength - i - 1] = numbers[i]
 	}
 	return reversedNumbers
 }
