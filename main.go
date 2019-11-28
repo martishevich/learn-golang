@@ -6,16 +6,17 @@ import (
 	"fmt"
 )
 
-func multiplyByTwo(k *int) error {
-	*k *= 2
+func multiplyByTwo(k int) error {
+	k *= 2
 	return nil
 }
 
-func printMoreTen(k int64) error {
+func printMoreTen(k int) error {
 	if k < 10 {
 		return errors.New("k must be > 10")
 	}
 	fmt.Println(k)
+	return nil
 }
 
 func dejson() error {
@@ -25,15 +26,15 @@ func dejson() error {
 	}
 	in := []byte(`{"data": 13, "ok": true}`)
 	var out jsStruct
-	if err := json.Unmarshal(in, out); err != nil {
+	if err := json.Unmarshal(in, &out); err != nil {
 		panic(err)
 	}
+	return nil
 }
 
 func main() {
 	var r int = 11
-	var k = 10
-	err := multiplyByTwo(r)
+	multiplyByTwo(r)
 
 	if err := printMoreTen(r); err != nil {
 		panic(err)
