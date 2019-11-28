@@ -2,12 +2,12 @@
 
 
 [[projects]]
-  digest = "1:ea7929b5ce35b109685e5c992ddf64d5b977cd915b2c050fc340d7d645c87418"
+  branch = "master"
+  digest = "1:7ab5abf062ef87005eb68929aa3288c9fd8528efe715ba591813e716c90a978e"
   name = "github.com/kyokomi/emoji"
   packages = ["."]
   pruneopts = "UT"
-  revision = "eba9a9d7bfd64dcfe6e90fb3d53b2f3357a015c3"
-  version = "v2.1.0"
+  revision = "4610be54f4e805c862c5e6673c0c957eec03dbe5"
 
 [solve-meta]
   analyzer-name = "dep"
