@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 )
@@ -22,7 +21,7 @@ func handleRoot(w http.ResponseWriter, r *http.Request) {
 		r.Header,
 	})
 	if err != nil {
-		fmt.Println(err)
+		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 	w.Write(responseJSON)
